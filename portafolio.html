@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastian Rivaldi - Software Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3b9900375c.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul class="navbar-menu" id="menu-nav">
+            <li class="navbar-item">
+                <a class="underline" href="#welcome-section" onclick=btnLink()>About</a>
+            </li>
+            <li class="navbar-item">
+                <a class="underline" href="#projects" onclick=btnLink()>Projects</a>
+            </li>
+            <li class="navbar-item">
+                <a class="underline" href="#contact" onclick=btnLink()>Contact</a>
+            </li>
+        </ul>
+        <span id="bar" class="barnav" onclick=btnNav()>
+            <i class="fa-solid fa-bars"></i>
+        </span>
+    </nav>
+    <section id="welcome-section">
+        <div class="welcome-title focus-in-expand">
+            <h1>Sebastian Rivaldi</h1>
+            <span class="font-title " >Software Developer</span>
+        </div>
+        <div class="description">
+            <p class="text-focus-in">
+                ¡Bienvenido! soy desarrollador de software con una Lic. en Ciencias Informáticas, me encanta la tecnología y los videojuegos. Actualmente estoy siguiendo una ruta de aprendizaje para el desarrollo web tanto el front-end como back-end. Soy una persona muy proactiva, autodidacta, curiosa, colaborativa y estoy trabajando para mejorar mis habilidades en el desarrollo de software.
+            </p>
+        </div>
+    </section>
+    <section id="projects">
+        <h1 class="head-project">
+            Projects
+        </h1>
+        <div class="grid-project">
+            
+        </div>
+    </section>
+    <section id="contact"></section>
+    <footer></footer>
+    <script type="text/javascript">
+        //función para ocultar el navbar en el mobile
+        const btnNav = function () {
+            let proNavbar = document.getElementById('navbar');
+            let propMenu = document.getElementById('menu-nav');
+            if(proNavbar.className === 'show-nav'){
+                proNavbar.className = '';
+                propMenu.className = 'navbar-menu'
+            }else{
+                proNavbar.className = 'show-nav';
+                propMenu.className += ' show-menu'
+            }
+        }
+
+        //para cerrar nav en modo responsive
+        const btnLink = function(){
+            if(window.screen.width<=700){
+                btnNav();
+            }
+        }
+    </script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

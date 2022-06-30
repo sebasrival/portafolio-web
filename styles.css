@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Code+Pro:ital,wght@0,400;1,800&family=Trispace:wght@100;700&display=swap');
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-image: linear-gradient(to left bottom, #00374a, #20394e, #333a4e, #403d4e, #49404c);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Navbar CSS start */
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    background-color: #23394E;
+    min-height: 3.688em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-item {
+    margin: 1.25em;
+}
+
+ul {
+    list-style: none;
+}
+
+.navbar-menu li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'Trispace', sans-serif;
+    font-weight: 700;
+    display: inline;
+    position: relative;
+    transition: color 0.2s ease-out;
+    text-transform: uppercase;
+}
+
+.navbar-menu li a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.188em;
+    left: 0;
+    bottom: -0.313em;
+    background-color: #C694C1;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out 0.1s;
+}
+
+.underline:hover::after {
+    background-color: #40B381;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.barnav {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    margin: 1.25em;
+}
+
+.barnav:hover {
+    color: #40B381;
+}
+
+@media (max-width:700px) {
+
+    #navbar {
+        justify-content: flex-start;
+        height: 3.688em;
+        transition: height 0.2s linear;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 3.5em;
+        transform: scaleY(0);
+    }
+
+    .navbar-item{
+        margin-top: 0.313em;
+    }
+
+    .barnav {
+        display: block;
+    }
+}
+
+.show-nav{
+    height: 12em !important;
+}
+
+.show-menu {
+    transform: scaleY(1);
+    transform-origin: left top;
+    transition: transform 0.4s ease-in-out;
+}
+/* Navbar CSS end*/
+
+
+/* Sections CSS*/
+    section{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    #welcome-section {
+        align-items: center;
+        gap: 5em;
+    }
+
+    .font-title {
+        font-family: 'Source Code Pro', 'sans-serif';
+    }
+
+    .welcome-title {
+        margin-inline: 2em;
+    }
+
+    .welcome-title h1 {
+        font-family: 'Trispace', 'sans-serif';
+        color:#f2f2f2;
+        font-size: 3em;
+        font-weight: 700;
+        word-break: normal;
+        opacity: 0.9;
+    }
+
+    .welcome-title span {
+        color: #EC9929;
+        text-align: end;
+        width: 100%;
+        display: block;
+        font-size: 1.2em;
+    }
+
+    .description{
+        max-width: 35em;
+        margin-inline: 1.5em;
+    }
+
+    .description p {
+        font-family: 'Open Sans', 'sans-serif';
+        color: #f2f2f2;
+        opacity: 0.9;
+        text-align: justify;
+        word-break: normal;
+        font-size: 1.3em;
+    }
+
+    @media (max-width:1200px){
+        #welcome-section {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width:500px){
+        .welcome-title span{
+            text-align: start;
+        }
+
+        .description p {
+            font-size: 1em;
+            text-align: start;
+        }
+
+        .welcome-title h1 {
+            font-size: 2.5em;
+        }
+
+        #welcome-section {
+            gap: 3em;
+        }
+    }
+
+    #projects {
+        background-image: linear-gradient(to right top, #005f6d, #005f64, #005f5a, #085e4e, #1d5c41);
+    }
+
+    #contact {
+        background-image: linear-gradient(to right top, #3b667b, #1c6466, #2d5f44, #4b5422, #664217);
+    }
+
+    .head-project {
+        font-family: 'Trispace', 'sans-serif';
+        color: #f2f2f2;
+        opacity: 0.9;
+        margin-top: 2em;
+        font-size: 2.5em;
+        font-weight: 700;
+    }
+
+    
+
+/* Sections end*/
+
+/* Animaciones */
+.focus-in-expand {
+	-webkit-animation: focus-in-expand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-expand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.text-focus-in {
+	-webkit-animation: text-focus-in 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation focus-in-expand
+ * ----------------------------------------
+ */
+ @-webkit-keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+  /* ----------------------------------------------
+ * Generated by Animista on 2022-6-29 19:47:59
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
+/* Animaciones end */
