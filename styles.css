@@ -211,10 +211,10 @@ ul {
 
     #projects {
         background-image: linear-gradient(to right top, #005f6d, #005f64, #005f5a, #085e4e, #1d5c41);
-    }
-
-    #contact {
-        background-image: linear-gradient(to right top, #3b667b, #1c6466, #2d5f44, #4b5422, #664217);
+        flex-direction: column;
+        justify-content: inherit;
+        align-items: center;
+        height: auto;
     }
 
     .head-project {
@@ -222,11 +222,73 @@ ul {
         color: #f2f2f2;
         opacity: 0.9;
         margin-top: 2em;
+        margin-bottom: 1em;
         font-size: 2.5em;
         font-weight: 700;
     }
 
-    
+    .grid-project {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+        gap: 2em;
+        margin: 2em;
+        width: auto;
+        max-width: 90%;
+    }
+
+    .card {
+        box-sizing: inherit;
+        background-color: #00374a;
+        border-radius: 1.563em 1.563em 1.563em 1.563em;
+        transition: box-shadow 0.3s;
+        text-decoration: none;
+    }
+
+    .card:hover {
+        box-shadow: 0.9em 0.9em 0.9em rgba(0, 0, 0, 0.3);
+    }
+
+    .card__img{
+        width: 20em;
+        max-width: 100%;
+        height: 15em;
+        border-radius: 1.563em 1.563em 0 0;
+        margin: 0;
+    }
+    .card__title {
+        text-align: center;
+        height: 2em;
+        margin: auto;
+        font-size: .9em;
+        font-family: 'Source Code Pro', 'sans-serif';
+        color: rgba(255, 255, 255, 0.753);
+    }
+
+    #contact {
+        background-image: linear-gradient(to right top, #3b667b, #1c6466, #2d5f44, #4b5422, #664217);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .head-contact {
+        color: #f2f2f2;
+        font-family: 'Trispace', 'sans-serif';
+        font-size: 2.5em;
+    }
+
+    .content_contact {
+        color: #f2f2f2;
+        margin-block: 0.8em;
+        font-family: 'Source Code Pro', 'sans-serif';
+    }
+
+    .contact_links {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        margin: 2em;
+    }
 
 /* Sections end*/
 
