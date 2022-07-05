@@ -136,7 +136,7 @@ ul {
     section{
         display: flex;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         justify-content: center;
     }
 
@@ -170,6 +170,17 @@ ul {
         font-size: 1.2em;
     }
 
+    .img-div {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 0.9em;
+    }
+    .img-profile {
+        border-radius: 50%;
+        width: 8em;
+        box-shadow: 0.5em 0.5em 1em 0.5em rgba(0, 0, 0, 0.3);
+    }
+
     .description{
         max-width: 35em;
         margin-inline: 1.5em;
@@ -188,6 +199,12 @@ ul {
         #welcome-section {
             flex-direction: column;
         }
+
+        .img-div {
+            justify-content: center;
+        }
+
+
     }
 
     @media (max-width:500px){
@@ -206,6 +223,25 @@ ul {
 
         #welcome-section {
             gap: 3em;
+        }
+    }
+
+    @media (max-width: 300px){
+        .welcome-title span{
+            text-align: start;
+        }
+
+        .description p {
+            font-size: 0.8em;
+            text-align: start;
+        }
+
+        .welcome-title h1 {
+            font-size: 2em;
+        }
+
+        #welcome-section {
+            gap: 2.5em;
         }
     }
 
@@ -295,11 +331,29 @@ ul {
         text-decoration: none;
         color: #f2f2f2;
         font-family: 'Source Code Pro', 'sans-serif';
-        font-weight: bold;
+        font-size: 1em;
+        transition: transform 0.3s ease-out;
+       
+    }
+
+    .contact__link:hover {
+       transform: translateY(0.4em);
     }
 
     .contact__link span{
         margin-inline: 0.2em;
+    }
+    @media (max-width: 700px) {
+        .contact__links {
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .contact__links {
+            flex-direction: column;
+            gap: 2em;
+        }
     }
 
 /* Sections end*/
