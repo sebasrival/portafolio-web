@@ -28,7 +28,7 @@
         </span>
     </nav>
     <section id="welcome-section">
-        <div class="welcome-title focus-in-expand">
+        <div class="welcome-title">
             <div class="img-div">
                 <img src="img/profile.png" class="img-profile">
             </div>
@@ -36,7 +36,7 @@
             <span class="font-title " >Software Developer</span>
         </div>
         <div class="description">
-            <p class="text-focus-in">
+            <p>
                 ¡Bienvenido! soy desarrollador de software con una Lic. en Ciencias Informáticas, me encanta la tecnología y los videojuegos. Actualmente estoy siguiendo una ruta de aprendizaje para el desarrollo web tanto el front-end como back-end. Soy una persona muy proactiva, autodidacta, curiosa, colaborativa y estoy trabajando para mejorar mis habilidades en el desarrollo de software.
             </p>
         </div>
@@ -87,6 +87,15 @@
     </section>
     <footer></footer>
     <script type="text/javascript">
+        //Blur transition
+        window.addEventListener('DOMContentLoaded', ()=>{
+            setTimeout(()=> {
+                const welcome = document.querySelector('#welcome-section')
+                welcome.style.opacity = 1;
+                welcome.style.filter = 'blur(0)'
+            }, 800)
+        })
+
         //función para ocultar el navbar en el mobile
         const btnNav = function () {
             let proNavbar = document.getElementById('navbar');
